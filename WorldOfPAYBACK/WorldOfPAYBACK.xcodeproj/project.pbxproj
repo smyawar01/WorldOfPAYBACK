@@ -14,6 +14,7 @@
 		0337DE97298696B400C328D5 /* WorldOfPAYBACKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DE96298696B400C328D5 /* WorldOfPAYBACKTests.swift */; };
 		0337DEA1298696B400C328D5 /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEA0298696B400C328D5 /* WorldOfPAYBACKUITests.swift */; };
 		0337DEA3298696B400C328D5 /* WorldOfPAYBACKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEA2298696B400C328D5 /* WorldOfPAYBACKUITestsLaunchTests.swift */; };
+		0337DEB12986970E00C328D5 /* Network in Resources */ = {isa = PBXBuildFile; fileRef = 0337DEB02986970E00C328D5 /* Network */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0337DE9C298696B400C328D5 /* WorldOfPAYBACKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337DEA0298696B400C328D5 /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
 		0337DEA2298696B400C328D5 /* WorldOfPAYBACKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0337DEB02986970E00C328D5 /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Network; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		0337DE84298696B100C328D5 /* WorldOfPAYBACK */ = {
 			isa = PBXGroup;
 			children = (
+				0337DEAF2986970500C328D5 /* Core */,
 				0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */,
 				0337DE87298696B100C328D5 /* ContentView.swift */,
 				0337DE89298696B400C328D5 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				0337DEA2298696B400C328D5 /* WorldOfPAYBACKUITestsLaunchTests.swift */,
 			);
 			path = WorldOfPAYBACKUITests;
+			sourceTree = "<group>";
+		};
+		0337DEAF2986970500C328D5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0337DEB02986970E00C328D5 /* Network */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0337DEB12986970E00C328D5 /* Network in Resources */,
 				0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */,
 				0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */,
 			);
