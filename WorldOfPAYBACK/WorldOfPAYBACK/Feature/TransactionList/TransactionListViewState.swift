@@ -10,4 +10,6 @@ import Foundation
 enum TransactionListViewState {
     
     case loading
+    case loaded([TransactionListViewData])
+    case error(Error)
 }

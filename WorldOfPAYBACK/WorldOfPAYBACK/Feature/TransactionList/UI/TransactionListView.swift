@@ -9,15 +9,26 @@ import SwiftUI
 
 struct TransactionListView: View {
     
-    let viewModel: TransactionListViewModel
+    var viewModel: TransactionListViewModel
     var body: some View {
         
-        ZStack {
+        switch viewModel.viewState {
             
-            if viewModel.viewState == .loading {
+        case .loading:
+            
+            CustomLoader()
+        case .loaded(let transactions):
+            
+            List(transactions, id: \.id) {
                 
-                CustomLoader()
+                TransactionListItemView(transaction: $0)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparatorTint(.gray)
+                
             }
+        case .error(let error):
+            
+            Text(error.localizedDescription)
         }
     }
 }
