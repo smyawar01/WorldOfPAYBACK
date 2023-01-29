@@ -21,6 +21,8 @@
 		0337DEC72987108C00C328D5 /* TransactionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEC62987108C00C328D5 /* TransactionListItemView.swift */; };
 		0337DEC92987195000C328D5 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEC82987195000C328D5 /* AmountView.swift */; };
 		0337DECB29871A5D00C328D5 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DECA29871A5D00C328D5 /* TitleView.swift */; };
+		0337DED729873BD500C328D5 /* TransactionListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DED629873BD400C328D5 /* TransactionListViewTests.swift */; };
+		0337DEE029873E9100C328D5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0337DEDF29873E9100C328D5 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		0337DEC62987108C00C328D5 /* TransactionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListItemView.swift; sourceTree = "<group>"; };
 		0337DEC82987195000C328D5 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		0337DECA29871A5D00C328D5 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		0337DED629873BD400C328D5 /* TransactionListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0337DEE029873E9100C328D5 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +133,7 @@
 		0337DE95298696B400C328D5 /* WorldOfPAYBACKTests */ = {
 			isa = PBXGroup;
 			children = (
+				0337DED429873B9E00C328D5 /* Feature */,
 				0337DE96298696B400C328D5 /* WorldOfPAYBACKTests.swift */,
 			);
 			path = WorldOfPAYBACKTests;
@@ -137,7 +142,6 @@
 		0337DE9F298696B400C328D5 /* WorldOfPAYBACKUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0337DEBE2986D43200C328D5 /* Feature */,
 			);
 			path = WorldOfPAYBACKUITests;
 			sourceTree = "<group>";
@@ -189,21 +193,6 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		0337DEBE2986D43200C328D5 /* Feature */ = {
-			isa = PBXGroup;
-			children = (
-				0337DEBF2986D44600C328D5 /* TransactionList */,
-			);
-			path = Feature;
-			sourceTree = "<group>";
-		};
-		0337DEBF2986D44600C328D5 /* TransactionList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TransactionList;
-			sourceTree = "<group>";
-		};
 		0337DEC22987028C00C328D5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +207,22 @@
 				0337DEC4298702D700C328D5 /* TransactionValue.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0337DED429873B9E00C328D5 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				0337DED529873BA500C328D5 /* TransactionList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		0337DED529873BA500C328D5 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				0337DED629873BD400C328D5 /* TransactionListViewTests.swift */,
+			);
+			path = TransactionList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +241,8 @@
 			dependencies = (
 			);
 			name = WorldOfPAYBACK;
+			packageProductDependencies = (
+			);
 			productName = WorldOfPAYBACK;
 			productReference = 0337DE82298696B100C328D5 /* WorldOfPAYBACK.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +261,9 @@
 				0337DE94298696B400C328D5 /* PBXTargetDependency */,
 			);
 			name = WorldOfPAYBACKTests;
+			packageProductDependencies = (
+				0337DEDF29873E9100C328D5 /* SnapshotTesting */,
+			);
 			productName = WorldOfPAYBACKTests;
 			productReference = 0337DE92298696B400C328D5 /* WorldOfPAYBACKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -308,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 0337DE79298696B100C328D5;
+			packageReferences = (
+				0337DEDE29873E9100C328D5 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 0337DE83298696B100C328D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0337DE97298696B400C328D5 /* WorldOfPAYBACKTests.swift in Sources */,
+				0337DED729873BD500C328D5 /* TransactionListViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0337DEDE29873E9100C328D5 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0337DEDF29873E9100C328D5 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0337DEDE29873E9100C328D5 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0337DE7A298696B100C328D5 /* Project object */;
 }
