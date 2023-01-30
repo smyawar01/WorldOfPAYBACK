@@ -26,9 +26,9 @@ struct TransactionListView: View {
                     .listRowSeparatorTint(.gray)
                 
             }
-        case .error(let error):
+        case .error(let message):
             
-            Text(error.localizedDescription)
+            Text(message)
         }
     }
 }
