@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		032FC1632987485F00AAD4F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1622987485F00AAD4F4 /* Constants.swift */; };
+		032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */; };
 		0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */; };
 		0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE89298696B400C328D5 /* Assets.xcassets */; };
 		0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE8C298696B400C328D5 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		032FC1622987485F00AAD4F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionUseCase.swift; sourceTree = "<group>"; };
 		0337DE82298696B100C328D5 /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		0337DE89298696B400C328D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				0337DEB72986C58800C328D5 /* TransactionListViewModel.swift */,
 				0337DEC02986D8CF00C328D5 /* TransactionListViewData.swift */,
 				0337DEB92986C6E800C328D5 /* TransactionListViewState.swift */,
+				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */,
+				032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */,
 				0337DEBD2986D20200C328D5 /* CustomLoader.swift in Sources */,
 				0337DEC92987195000C328D5 /* AmountView.swift in Sources */,
 				0337DEB82986C58800C328D5 /* TransactionListViewModel.swift in Sources */,
