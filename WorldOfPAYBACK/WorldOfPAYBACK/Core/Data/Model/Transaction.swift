@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction {
+struct Transaction: Decodable {
     
     let partnerDisplayName: String
     let category: Int
@@ -15,7 +15,7 @@ struct Transaction {
     let transactionDetail: TransactionDetail
 }
 
-struct Alias {
+struct Alias: Decodable {
     
     let reference: Int
 }

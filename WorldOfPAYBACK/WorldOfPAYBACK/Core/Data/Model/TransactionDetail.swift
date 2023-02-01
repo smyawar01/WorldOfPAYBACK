@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransactionDetail {
+struct TransactionDetail: Decodable {
     
     let description : String
     let bookingDate : Date

@@ -9,14 +9,15 @@ import Foundation
 
 protocol TransactionRepository {
     
-    func getAll() async -> Result<[Transaction], Error>
+    func getAll() async throws -> [Transaction]
 }
 
 public struct TransactionRepositoryImpl: TransactionRepository {
     
     let networkService: NetworkService
-    func getAll() async -> Result<[Transaction], Error> {
+    func getAll() async throws -> [Transaction] {
         
-        return .success([])
+        let transaction: [Transaction] = try await networkService.execute(url: URL(string: "")!)
+        return transaction
     }
 }
