@@ -4,6 +4,15 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    
+    case transportError(Error)
+    case serverError(Int)
+    case noData
+    case decodingError(Error)
+}
+
+
 protocol NetworkService {
     
     func execute<Model: Decodable>(url: URL, completion: @escaping ((Result<Model, Error>) -> Void))

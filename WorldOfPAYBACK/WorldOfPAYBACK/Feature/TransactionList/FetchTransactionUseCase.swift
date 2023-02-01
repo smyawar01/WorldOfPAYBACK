@@ -14,6 +14,7 @@ protocol FetchTransactionUseCase {
 
 public struct FetchTransactionUseCaesImpl: FetchTransactionUseCase {
     
+    let repository: TransactionRepository
     func execute() async -> [TransactionListViewData] {
         
         return []
