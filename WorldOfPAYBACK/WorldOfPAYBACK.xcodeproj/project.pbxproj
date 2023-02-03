@@ -13,6 +13,9 @@
 		032FC1742989DD6A00AAD4F4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1732989DD6900AAD4F4 /* Transaction.swift */; };
 		032FC1762989DDE600AAD4F4 /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1752989DDE600AAD4F4 /* TransactionDetail.swift */; };
 		032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1782989DF7F00AAD4F4 /* NetworkService.swift */; };
+		032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */; };
+		032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */; };
+		032FC186298DC6D700AAD4F4 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC185298DC6D700AAD4F4 /* AppFactory.swift */; };
 		0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */; };
 		0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE89298696B400C328D5 /* Assets.xcassets */; };
 		0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE8C298696B400C328D5 /* Preview Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		032FC1732989DD6900AAD4F4 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		032FC1752989DDE600AAD4F4 /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		032FC1782989DF7F00AAD4F4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListMapper.swift; sourceTree = "<group>"; };
+		032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListFactory.swift; sourceTree = "<group>"; };
+		032FC185298DC6D700AAD4F4 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		0337DE82298696B100C328D5 /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		0337DE89298696B400C328D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */,
 				0337DE89298696B400C328D5 /* Assets.xcassets */,
 				0337DE8B298696B400C328D5 /* Preview Content */,
+				032FC185298DC6D700AAD4F4 /* AppFactory.swift */,
 			);
 			path = WorldOfPAYBACK;
 			sourceTree = "<group>";
@@ -202,6 +209,8 @@
 				0337DEB92986C6E800C328D5 /* TransactionListViewState.swift */,
 				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
 				032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */,
+				032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */,
+				032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -405,10 +414,13 @@
 				0337DEC92987195000C328D5 /* AmountView.swift in Sources */,
 				0337DEB82986C58800C328D5 /* TransactionListViewModel.swift in Sources */,
 				0337DEC5298702D700C328D5 /* TransactionValue.swift in Sources */,
+				032FC186298DC6D700AAD4F4 /* AppFactory.swift in Sources */,
 				0337DEC72987108C00C328D5 /* TransactionListItemView.swift in Sources */,
 				032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */,
+				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
 				0337DEB62986C22600C328D5 /* TransactionListView.swift in Sources */,
 				032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */,
+				032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */,
 				0337DEBA2986C6E800C328D5 /* TransactionListViewState.swift in Sources */,
 				0337DEC12986D8CF00C328D5 /* TransactionListViewData.swift in Sources */,
 				0337DECB29871A5D00C328D5 /* TitleView.swift in Sources */,

@@ -11,4 +11,5 @@ struct TransactionDetail: Decodable {
     
     let description : String
     let bookingDate : Date
+    let value: TransactionValue
 }

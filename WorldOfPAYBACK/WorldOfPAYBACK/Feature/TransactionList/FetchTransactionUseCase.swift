@@ -9,14 +9,17 @@ import Foundation
 
 protocol FetchTransactionUseCase {
     
-    func execute() async -> [TransactionListViewData]
+    func execute() async throws -> [TransactionListViewData]
 }
 
-public struct FetchTransactionUseCaesImpl: FetchTransactionUseCase {
+public struct FetchTransactionUseCaseImpl: FetchTransactionUseCase {
     
     let repository: TransactionRepository
-    func execute() async -> [TransactionListViewData] {
+    let mapper: TransactionListMapper
+    
+    func execute() async throws -> [TransactionListViewData] {
         
-        return []
+        let transactions = try await repository.getAll()
+        return mapper.map(transactions: transactions)
     }
 }

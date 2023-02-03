@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransactionValue {
+struct TransactionValue: Decodable {
     
     let amount: Double
     let currency: String

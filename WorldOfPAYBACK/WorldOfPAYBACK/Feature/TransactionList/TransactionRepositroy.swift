@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TransactionRepository {
+public protocol TransactionRepository {
     
     func getAll() async throws -> [Transaction]
 }
@@ -15,7 +15,7 @@ protocol TransactionRepository {
 public struct TransactionRepositoryImpl: TransactionRepository {
     
     let networkService: NetworkService
-    func getAll() async throws -> [Transaction] {
+    public func getAll() async throws -> [Transaction] {
         
         let transaction: [Transaction] = try await networkService.execute(url: URL(string: "")!)
         return transaction

@@ -35,6 +35,8 @@ struct TransactionListView: View {
 
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListView(viewModel: TransactionListViewModelImpl())
+        
+        let vm = AppFactory().makeTransactionListFactory().makeViewModel()
+        TransactionListView(viewModel: vm)
     }
 }

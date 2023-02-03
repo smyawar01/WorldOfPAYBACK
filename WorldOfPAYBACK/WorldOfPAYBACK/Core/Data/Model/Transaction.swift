@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: Decodable {
+public struct Transaction: Decodable {
     
     let partnerDisplayName: String
     let category: Int

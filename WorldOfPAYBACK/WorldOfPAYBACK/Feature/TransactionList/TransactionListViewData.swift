@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct TransactionListViewData: Identifiable {
-    let id: UUID
+public struct TransactionListViewData: Identifiable {
+    
+    public let id: UUID
     let bookingDate: String
     let partnerDisplayName: String
     let description: String
