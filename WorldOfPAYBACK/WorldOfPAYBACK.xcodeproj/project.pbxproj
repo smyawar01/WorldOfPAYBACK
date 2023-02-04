@@ -16,6 +16,8 @@
 		032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */; };
 		032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */; };
 		032FC186298DC6D700AAD4F4 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC185298DC6D700AAD4F4 /* AppFactory.swift */; };
+		032FC189298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */; };
+		032FC18A298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */; };
 		0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */; };
 		0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE89298696B400C328D5 /* Assets.xcassets */; };
 		0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE8C298696B400C328D5 /* Preview Assets.xcassets */; };
@@ -61,6 +63,7 @@
 		032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListMapper.swift; sourceTree = "<group>"; };
 		032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListFactory.swift; sourceTree = "<group>"; };
 		032FC185298DC6D700AAD4F4 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		0337DE82298696B100C328D5 /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		0337DE89298696B400C328D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +126,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		032FC187298DD6FB00AAD4F4 /* Mocker */ = {
+			isa = PBXGroup;
+			children = (
+				032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */,
+			);
+			path = Mocker;
+			sourceTree = "<group>";
+		};
 		0337DE79298696B100C328D5 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +180,7 @@
 		0337DE95298696B400C328D5 /* WorldOfPAYBACKTests */ = {
 			isa = PBXGroup;
 			children = (
+				032FC187298DD6FB00AAD4F4 /* Mocker */,
 				0337DED429873B9E00C328D5 /* Feature */,
 				0337DE96298696B400C328D5 /* WorldOfPAYBACKTests.swift */,
 			);
@@ -426,6 +438,7 @@
 				0337DECB29871A5D00C328D5 /* TitleView.swift in Sources */,
 				032FC1632987485F00AAD4F4 /* Constants.swift in Sources */,
 				032FC1762989DDE600AAD4F4 /* TransactionDetail.swift in Sources */,
+				032FC189298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032FC18A298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */,
 				0337DE97298696B400C328D5 /* WorldOfPAYBACKTests.swift in Sources */,
 				0337DED729873BD500C328D5 /* TransactionListViewTests.swift in Sources */,
 			);
