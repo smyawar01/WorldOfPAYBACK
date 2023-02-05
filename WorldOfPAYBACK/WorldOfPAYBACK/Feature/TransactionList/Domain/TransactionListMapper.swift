@@ -28,7 +28,7 @@ public struct TransactionListMapperImpl: TransactionListMapper {
             return TransactionListViewData(id: UUID(),
                                            bookingDate: self.dateFormatter.string(from: transaction.transactionDetail.bookingDate),
                                            partnerDisplayName: transaction.partnerDisplayName,
-                                           description: transaction.transactionDetail.description,
+                                           description: transaction.transactionDetail.description ?? "",
                                            value: transaction.transactionDetail.value)
         }
     }

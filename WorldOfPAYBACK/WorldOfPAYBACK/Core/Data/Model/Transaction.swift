@@ -17,5 +17,5 @@ public struct Transaction: Decodable {
 
 struct Alias: Decodable {
     
-    let reference: Int
+    let reference: String
 }

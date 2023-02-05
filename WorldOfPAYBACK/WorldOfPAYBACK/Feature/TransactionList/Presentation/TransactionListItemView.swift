@@ -19,6 +19,7 @@ struct TransactionListItemView: View {
                 Text(transaction.description)
                     .foregroundColor(.white)
             }
+            Spacer()
             VStack(alignment: .trailing, spacing: 10) {
 
                 Text(transaction.bookingDate)

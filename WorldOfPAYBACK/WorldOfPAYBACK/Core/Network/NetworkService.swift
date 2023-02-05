@@ -29,6 +29,7 @@ struct NetworkSerivceImpl: NetworkService {
             
         } catch {
             
+            print("Error: \(error)")
             throw NetworkError.decodingError(error)
         }
     }
