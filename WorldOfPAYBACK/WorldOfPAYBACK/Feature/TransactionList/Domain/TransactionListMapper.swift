@@ -17,18 +17,19 @@ public struct TransactionListMapperImpl: TransactionListMapper {
     let dateFormatter: DateFormatter
     public func map(transactions: [Transaction]) -> [TransactionListViewData] {
         
-        self.dateFormatter.dateFormat = "MMM dd,yyyy"
+        self.dateFormatter.dateFormat = AppConstants.AppDateFormat.transaction
         
         return transactions.sorted { (trans0, trans1) in
             
-            trans0.transactionDetail.bookingDate < trans1.transactionDetail.bookingDate
+            trans0.transactionDetail.bookingDate >
+            trans1.transactionDetail.bookingDate
         }
         .map { transaction in
             
             return TransactionListViewData(id: UUID(),
                                            bookingDate: self.dateFormatter.string(from: transaction.transactionDetail.bookingDate),
                                            partnerDisplayName: transaction.partnerDisplayName,
-                                           description: transaction.transactionDetail.description,
+                                           description: transaction.transactionDetail.description ?? "N/A",
                                            value: transaction.transactionDetail.value)
         }
     }

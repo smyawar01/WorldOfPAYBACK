@@ -32,7 +32,7 @@ class TransactionListViewTests: XCTestCase {
     func test_listView_errorOnLoading() throws {
         
         let vm = TransactionListViewModelStub()
-        vm.viewState = .error(AppConstants.APIError.genericMessage)
+        vm.viewState = .error(TransactionListError.generic.localizedDescription)
         let view = TransactionListView(viewModel: vm)
         let vc = UIHostingController(rootView: view)
         vc.view.frame = UIScreen.main.bounds
@@ -68,6 +68,9 @@ class TransactionListViewTests: XCTestCase {
 }
 class TransactionListViewModelStub: TransactionListViewModel {
     
-    var viewState: TransactionListViewState = .loading
+    var viewState: TransactionListViewState?
+    
+    func transactions() {
+    }
 }
 

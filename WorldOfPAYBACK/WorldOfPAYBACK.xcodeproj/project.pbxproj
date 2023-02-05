@@ -37,6 +37,8 @@
 		0337DED729873BD500C328D5 /* TransactionListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DED629873BD400C328D5 /* TransactionListViewTests.swift */; };
 		0337DEE029873E9100C328D5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0337DEDF29873E9100C328D5 /* SnapshotTesting */; };
 		0337DEE22987433100C328D5 /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */; };
+		03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */; };
+		03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AF02990558F00E4E244 /* TransactionListError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		0337DECA29871A5D00C328D5 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0337DED629873BD400C328D5 /* TransactionListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewTests.swift; sourceTree = "<group>"; };
 		0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
+		03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListResponse.swift; sourceTree = "<group>"; };
+		03C98AF02990558F00E4E244 /* TransactionListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		032FC1772989DF7F00AAD4F4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				03C98AEB298FEDE000E4E244 /* Response */,
 				032FC1782989DF7F00AAD4F4 /* NetworkService.swift */,
 				032FC18E298DE7B300AAD4F4 /* NetworkError.swift */,
 			);
@@ -222,25 +227,23 @@
 		0337DEB3298697B500C328D5 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
-				0337DEB42986C1F800C328D5 /* UI */,
-				0337DEB72986C58800C328D5 /* TransactionListViewModel.swift */,
-				0337DEC02986D8CF00C328D5 /* TransactionListViewData.swift */,
-				0337DEB92986C6E800C328D5 /* TransactionListViewState.swift */,
-				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
-				032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */,
-				032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */,
+				03C98AEC298FEE0800E4E244 /* Domain */,
+				0337DEB42986C1F800C328D5 /* Presentation */,
 				032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
 		};
-		0337DEB42986C1F800C328D5 /* UI */ = {
+		0337DEB42986C1F800C328D5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0337DEB72986C58800C328D5 /* TransactionListViewModel.swift */,
+				0337DEB92986C6E800C328D5 /* TransactionListViewState.swift */,
+				0337DEC02986D8CF00C328D5 /* TransactionListViewData.swift */,
 				0337DEB52986C22600C328D5 /* TransactionListView.swift */,
 				0337DEC62987108C00C328D5 /* TransactionListItemView.swift */,
 			);
-			path = UI;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		0337DEBB2986CCB700C328D5 /* CustomViews */ = {
@@ -285,6 +288,25 @@
 				0337DED629873BD400C328D5 /* TransactionListViewTests.swift */,
 			);
 			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		03C98AEB298FEDE000E4E244 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		03C98AEC298FEE0800E4E244 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */,
+				032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */,
+				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
+				03C98AF02990558F00E4E244 /* TransactionListError.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,7 +461,9 @@
 				0337DEC72987108C00C328D5 /* TransactionListItemView.swift in Sources */,
 				032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */,
 				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
+				03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */,
 				0337DEB62986C22600C328D5 /* TransactionListView.swift in Sources */,
+				03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */,
 				032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */,
 				032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */,
 				0337DEBA2986C6E800C328D5 /* TransactionListViewState.swift in Sources */,

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct TransactionListView: View {
+struct TransactionListView<ViewModel: TransactionListViewModel>: View {
     
-    var viewModel: TransactionListViewModel
+    @ObservedObject var viewModel: ViewModel
     
-    init(viewModel: TransactionListViewModel) {
+    init(viewModel: ViewModel) {
         
         self.viewModel = viewModel
         viewModel.transactions()

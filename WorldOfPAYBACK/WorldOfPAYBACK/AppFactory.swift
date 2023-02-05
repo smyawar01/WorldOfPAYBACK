@@ -10,6 +10,7 @@ import Foundation
 public struct AppFactory {
     
     let networkService: NetworkService
+    let jsonDecoder: JSONDecoder
     
     init() {
         
@@ -17,8 +18,12 @@ public struct AppFactory {
         
         let urlConfig = URLSessionConfiguration.default
         urlConfig.protocolClasses?.insert(MockURLProtocol.self, at: 0)
+        
+        jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        
         networkService = NetworkSerivceImpl(session: URLSession(configuration: urlConfig),
-                                              decoder: JSONDecoder())
+                                            decoder: jsonDecoder)
     }
     func makeTransactionListFactory() -> TransactionListFactory {
         

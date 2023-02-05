@@ -9,8 +9,8 @@ import Foundation
 
 struct AppConstants {
     
-    struct APIError {
+    struct AppDateFormat {
         
-        static let genericMessage = "Something went wrong. Please try again later"
+        static let transaction = "MMM dd, yyyy"
     }
 }
