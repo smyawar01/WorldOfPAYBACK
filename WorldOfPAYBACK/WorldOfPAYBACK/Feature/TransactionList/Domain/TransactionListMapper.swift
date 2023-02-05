@@ -17,7 +17,7 @@ public struct TransactionListMapperImpl: TransactionListMapper {
     let dateFormatter: DateFormatter
     public func map(transactions: [Transaction]) -> [TransactionListViewData] {
         
-        self.dateFormatter.dateFormat = "MMM dd, yyyy"
+        self.dateFormatter.dateFormat = AppConstants.AppDateFormat.transaction
         
         return transactions.sorted { (trans0, trans1) in
             

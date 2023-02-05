@@ -11,7 +11,7 @@ public struct TransactionListFactory {
     
     let networkService: NetworkService
     
-    func makeViewModel() -> TransactionListViewModel {
+    func makeViewModel() -> some TransactionListViewModel {
         
         TransactionListViewModelImpl(fetchUseCase: makeFetchUseCase())
     }

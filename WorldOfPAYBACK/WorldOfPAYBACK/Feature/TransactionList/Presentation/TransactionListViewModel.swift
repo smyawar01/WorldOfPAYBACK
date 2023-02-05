@@ -7,38 +7,41 @@
 
 import Foundation
 
-protocol TransactionListViewModel {
+protocol TransactionListViewModel: ObservableObject {
     
-    var viewState: TransactionListViewState? { get }
+    var viewState: TransactionListViewState? { get set }
     func transactions()
 }
 
 public final class TransactionListViewModelImpl: TransactionListViewModel {
     
-    var viewState: TransactionListViewState?
+    @Published var viewState: TransactionListViewState?
     private let fetchUseCase: FetchTransactionUseCase
     
     init(fetchUseCase: FetchTransactionUseCase) {
         
         self.fetchUseCase = fetchUseCase
     }
-    func transactions() {
+    public func transactions() {
         Task {
             
-            self.viewState = .loading
+            await self.update(state: .loading)
             do {
                 
                 let transactions = try await fetchUseCase.execute()
-                self.viewState = .loaded(transactions)
+                await self.update(state: .loaded(transactions))
                 
-            } catch {
-                
-                if let error = error as? NetworkError {
-                    
-                    self.viewState = .error(error.localizedDescription)
-                }
-            }
+            } catch { await self.update(state: .error(error.localizedDescription)) }
         }
+    }
+}
+
+extension TransactionListViewModel {
+    
+    @MainActor
+    func update(state: TransactionListViewState) {
+        
+        self.viewState = state
     }
 }
 

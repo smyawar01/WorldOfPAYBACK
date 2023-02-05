@@ -17,7 +17,7 @@ struct TransactionListItemView: View {
                 
                 TitleView(title: transaction.partnerDisplayName)
                 Text(transaction.description)
-                    .foregroundColor(.white)
+                    .foregroundColor(.gray)
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 10) {

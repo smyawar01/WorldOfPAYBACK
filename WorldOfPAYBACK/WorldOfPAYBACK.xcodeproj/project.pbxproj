@@ -38,6 +38,7 @@
 		0337DEE029873E9100C328D5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0337DEDF29873E9100C328D5 /* SnapshotTesting */; };
 		0337DEE22987433100C328D5 /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */; };
 		03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */; };
+		03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AF02990558F00E4E244 /* TransactionListError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		0337DED629873BD400C328D5 /* TransactionListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewTests.swift; sourceTree = "<group>"; };
 		0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
 		03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListResponse.swift; sourceTree = "<group>"; };
+		03C98AF02990558F00E4E244 /* TransactionListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */,
 				032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */,
 				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
+				03C98AF02990558F00E4E244 /* TransactionListError.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
 				03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */,
 				0337DEB62986C22600C328D5 /* TransactionListView.swift in Sources */,
+				03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */,
 				032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */,
 				032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */,
 				0337DEBA2986C6E800C328D5 /* TransactionListViewState.swift in Sources */,
