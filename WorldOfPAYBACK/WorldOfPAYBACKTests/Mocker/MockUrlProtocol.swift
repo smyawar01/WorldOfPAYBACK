@@ -44,9 +44,9 @@ extension MockURLProtocol {
                 let data = try String(contentsOfFile: path).data(using: .utf8)
                 return data
             }
-        } catch {
+        } catch(let error) {
             
-            print("Unable to load data from json file....")
+            print("Unable to load data from json file....\(error)")
         }
         return nil
     }

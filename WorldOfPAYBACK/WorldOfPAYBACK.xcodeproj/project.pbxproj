@@ -18,6 +18,9 @@
 		032FC186298DC6D700AAD4F4 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC185298DC6D700AAD4F4 /* AppFactory.swift */; };
 		032FC189298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */; };
 		032FC18A298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */; };
+		032FC18C298DE72800AAD4F4 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 032FC18B298DE72800AAD4F4 /* PBTransactions.json */; };
+		032FC18D298DE72800AAD4F4 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 032FC18B298DE72800AAD4F4 /* PBTransactions.json */; };
+		032FC18F298DE7B300AAD4F4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC18E298DE7B300AAD4F4 /* NetworkError.swift */; };
 		0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */; };
 		0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE89298696B400C328D5 /* Assets.xcassets */; };
 		0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337DE8C298696B400C328D5 /* Preview Assets.xcassets */; };
@@ -64,6 +67,8 @@
 		032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListFactory.swift; sourceTree = "<group>"; };
 		032FC185298DC6D700AAD4F4 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		032FC188298DD71B00AAD4F4 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
+		032FC18B298DE72800AAD4F4 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
+		032FC18E298DE7B300AAD4F4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0337DE82298696B100C328D5 /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337DE85298696B100C328D5 /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		0337DE89298696B400C328D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				032FC1782989DF7F00AAD4F4 /* NetworkService.swift */,
+				032FC18E298DE7B300AAD4F4 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 		0337DE79298696B100C328D5 = {
 			isa = PBXGroup;
 			children = (
+				032FC18B298DE72800AAD4F4 /* PBTransactions.json */,
 				0337DE84298696B100C328D5 /* WorldOfPAYBACK */,
 				0337DE95298696B400C328D5 /* WorldOfPAYBACKTests */,
 				0337DE9F298696B400C328D5 /* WorldOfPAYBACKUITests */,
@@ -394,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0337DE8D298696B400C328D5 /* Preview Assets.xcassets in Resources */,
+				032FC18C298DE72800AAD4F4 /* PBTransactions.json in Resources */,
 				0337DE8A298696B400C328D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032FC18D298DE72800AAD4F4 /* PBTransactions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +443,7 @@
 				032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */,
 				032FC180298DB1D700AAD4F4 /* TransactionListMapper.swift in Sources */,
 				0337DEBA2986C6E800C328D5 /* TransactionListViewState.swift in Sources */,
+				032FC18F298DE7B300AAD4F4 /* NetworkError.swift in Sources */,
 				0337DEC12986D8CF00C328D5 /* TransactionListViewData.swift in Sources */,
 				0337DECB29871A5D00C328D5 /* TitleView.swift in Sources */,
 				032FC1632987485F00AAD4F4 /* Constants.swift in Sources */,

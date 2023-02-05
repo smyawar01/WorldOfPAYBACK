@@ -10,6 +10,12 @@ import SwiftUI
 struct TransactionListView: View {
     
     var viewModel: TransactionListViewModel
+    
+    init(viewModel: TransactionListViewModel) {
+        
+        self.viewModel = viewModel
+        viewModel.transactions()
+    }
     var body: some View {
         
         switch viewModel.viewState {
@@ -29,6 +35,9 @@ struct TransactionListView: View {
         case .error(let message):
             
             Text(message)
+        case .none:
+            
+            Text("View is loading....")
         }
     }
 }

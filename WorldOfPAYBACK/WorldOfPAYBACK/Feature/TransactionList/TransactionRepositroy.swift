@@ -17,7 +17,7 @@ public struct TransactionRepositoryImpl: TransactionRepository {
     let networkService: NetworkService
     public func getAll() async throws -> [Transaction] {
         
-        let transaction: [Transaction] = try await networkService.execute(url: URL(string: "")!)
+        let transaction: [Transaction] = try await networkService.execute(url: URL(string: "https://api-test.payback.com/transactions")!)
         return transaction
     }
 }
