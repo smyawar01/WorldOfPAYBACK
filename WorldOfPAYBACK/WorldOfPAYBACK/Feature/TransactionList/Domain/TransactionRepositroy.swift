@@ -12,12 +12,21 @@ public protocol TransactionRepository {
     func getAll() async throws -> [Transaction]
 }
 
-public struct TransactionRepositoryImpl: TransactionRepository {
+public struct TransactionRepositoryImpl<Reachability: ReachabilityService>: TransactionRepository {
     
     let networkService: NetworkService
+    var reachability: Reachability
+    
     public func getAll() async throws -> [Transaction] {
         
-        let transaction: TransactionListResponse = try await networkService.execute(url: URL(string: "https://api-test.payback.com/transactions")!)
-        return transaction.items
+        if reachability.reachabilityStatus == .online {
+            
+            let transaction: TransactionListResponse = try await networkService.execute(url: URL(string: "https://api-test.payback.com/transactions")!)
+            return transaction.items
+            
+        } else {
+            
+            throw NetworkError.noNetwork
+        }
     }
 }

@@ -13,6 +13,7 @@ enum NetworkError: Error {
     case serverError(Int)
     case noData
     case decodingError(Error)
+    case noNetwork
 }
 
 extension NetworkError {
@@ -27,6 +28,8 @@ extension NetworkError {
             return NSLocalizedString("Something went wrong. Please try again later.", comment: "User friendly technical error")
         case .transportError(let error):
             return error.localizedDescription
+        case .noNetwork:
+            return NSLocalizedString("No internet connection.", comment: "User friendly no network message.")
         }
     }
 }
