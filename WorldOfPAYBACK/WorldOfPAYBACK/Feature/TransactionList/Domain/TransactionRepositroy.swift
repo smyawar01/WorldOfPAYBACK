@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum ConnectivityError: Error {
+    
+    case noInternet
+}
+
 public protocol TransactionRepository {
     
     func getAll() async throws -> [Transaction]
@@ -26,7 +31,7 @@ public struct TransactionRepositoryImpl<Reachability: ReachabilityService>: Tran
             
         } else {
             
-            throw NetworkError.noNetwork
+            throw ConnectivityError.noInternet
         }
     }
 }

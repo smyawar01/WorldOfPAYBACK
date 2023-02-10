@@ -25,23 +25,41 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
     public func transactions() {
         Task {
             
-            await self.update(state: .loading)
+            await update(state: .loading)
             do {
                 
                 let transactions = try await fetchUseCase.execute()
-                await self.update(state: .loaded(transactions))
+                await update(state: .loaded(transactions))
                 
-            } catch { await self.update(state: .error(error.localizedDescription)) }
+            } catch {
+                
+                guard let error = error as? TransactionListError else {
+                    
+                    return
+                }
+                if case .deviceOffline = error {
+                    
+                    await update(state: .noInternet)
+                } else {
+                    
+                    await update(state: .error(error.localizedDescription))
+                }
+            }
         }
     }
 }
 
-extension TransactionListViewModel {
+private extension TransactionListViewModel {
     
     @MainActor
     func update(state: TransactionListViewState) {
         
         self.viewState = state
+    }
+    func handleError(error: TransactionListError) async
+    {
+            
+            await self.update(state: .error(error.localizedDescription))
     }
 }
 
