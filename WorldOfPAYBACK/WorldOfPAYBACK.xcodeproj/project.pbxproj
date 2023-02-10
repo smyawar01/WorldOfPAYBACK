@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031099442991394F00DE02D4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031099432991394F00DE02D4 /* Reachability.swift */; };
 		032FC1632987485F00AAD4F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1622987485F00AAD4F4 /* Constants.swift */; };
 		032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */; };
 		032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031099432991394F00DE02D4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		032FC1622987485F00AAD4F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionUseCase.swift; sourceTree = "<group>"; };
 		032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositroy.swift; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031099422991392F00DE02D4 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				031099432991394F00DE02D4 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		032FC1642987486500AAD4F4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				03C98AEB298FEDE000E4E244 /* Response */,
+				031099422991392F00DE02D4 /* Reachability */,
 				032FC1782989DF7F00AAD4F4 /* NetworkService.swift */,
 				032FC18E298DE7B300AAD4F4 /* NetworkError.swift */,
 			);
@@ -459,6 +470,7 @@
 				0337DEC5298702D700C328D5 /* TransactionValue.swift in Sources */,
 				032FC186298DC6D700AAD4F4 /* AppFactory.swift in Sources */,
 				0337DEC72987108C00C328D5 /* TransactionListItemView.swift in Sources */,
+				031099442991394F00DE02D4 /* Reachability.swift in Sources */,
 				032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */,
 				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
 				03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */,

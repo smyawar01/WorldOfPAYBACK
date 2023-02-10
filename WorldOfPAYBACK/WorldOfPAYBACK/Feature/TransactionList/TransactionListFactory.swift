@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 
 public struct TransactionListFactory {
     
@@ -26,10 +27,15 @@ private extension TransactionListFactory {
     }
     private func makeRepository() -> TransactionRepository {
         
-        TransactionRepositoryImpl(networkService: self.networkService)
+        TransactionRepositoryImpl(networkService: self.networkService,
+                                  reachability: ReachabilityServiceImpl())
     }
     private func makeMapper() -> TransactionListMapper {
         
         TransactionListMapperImpl(dateFormatter: DateFormatter())
+    }
+    private func makeReachability() -> ReachabilityService {
+        
+        ReachabilityServiceImpl()
     }
 }

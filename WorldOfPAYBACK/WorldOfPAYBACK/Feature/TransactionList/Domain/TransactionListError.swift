@@ -22,7 +22,7 @@ extension TransactionListError {
         case .generic:
             return "Something went wrong. Please try again."
         case .deviceOffline:
-            return "The device appears to be offiline."
+            return "The device appears to be offline."
         }
     }
 }

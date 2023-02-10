@@ -18,26 +18,33 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
     }
     var body: some View {
         
-        switch viewModel.viewState {
+        VStack {
             
-        case .loading:
-            
-            CustomLoader()
-        case .loaded(let transactions):
-            
-            List(transactions, id: \.id) {
+            if viewModel.viewState == .noInternet  {
                 
-                TransactionListItemView(transaction: $0)
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparatorTint(.gray)
-                
+                Text("No internet connection....")
             }
-        case .error(let message):
-            
-            Text(message)
-        case .none:
-            
-            Text("View is loading....")
+            switch viewModel.viewState {
+                
+            case .loading:
+                
+                CustomLoader()
+            case .loaded(let transactions):
+                
+                List(transactions, id: \.id) {
+                    
+                    TransactionListItemView(transaction: $0)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparatorTint(.gray)
+                    
+                }
+            case .error(let message):
+                
+                Text(message)
+            default:
+                
+                Text("Missing data.....")
+            }
         }
     }
 }
