@@ -26,13 +26,9 @@ public struct FetchTransactionUseCaseImpl: FetchTransactionUseCase {
             
         } catch {
             
-            if error is NetworkError {
-                
-                throw TransactionListError.generic
-            } else {
-                
-                throw TransactionListError.deviceOffline
-            }
+            throw error is ConnectivityError ?
+            TransactionListError.deviceOffline :
+            TransactionListError.generic
         }
     }
 }
