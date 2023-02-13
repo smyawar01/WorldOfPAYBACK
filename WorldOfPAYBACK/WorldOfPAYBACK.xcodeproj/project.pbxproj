@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		031099442991394F00DE02D4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031099432991394F00DE02D4 /* Reachability.swift */; };
+		0310994D29961D8900DE02D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310994C29961D8900DE02D4 /* Theme.swift */; };
+		0310994F2996639000DE02D4 /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310994E2996639000DE02D4 /* NoConnectionView.swift */; };
 		032FC1632987485F00AAD4F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1622987485F00AAD4F4 /* Constants.swift */; };
 		032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */; };
 		032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		031099432991394F00DE02D4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0310994C29961D8900DE02D4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		0310994E2996639000DE02D4 /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
 		032FC1622987485F00AAD4F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionUseCase.swift; sourceTree = "<group>"; };
 		032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositroy.swift; sourceTree = "<group>"; };
@@ -129,6 +133,22 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		0310994829961A9800DE02D4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				032FC1732989DD6900AAD4F4 /* Transaction.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0310994B29961D7500DE02D4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0310994C29961D8900DE02D4 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		032FC1642987486500AAD4F4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +200,7 @@
 		0337DE84298696B100C328D5 /* WorldOfPAYBACK */ = {
 			isa = PBXGroup;
 			children = (
+				0310994B29961D7500DE02D4 /* Theme */,
 				032FC1642987486500AAD4F4 /* Constants */,
 				0337DEBB2986CCB700C328D5 /* CustomViews */,
 				0337DEB22986978400C328D5 /* Feature */,
@@ -238,14 +259,15 @@
 		0337DEB3298697B500C328D5 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				0310994829961A9800DE02D4 /* Data */,
 				03C98AEC298FEE0800E4E244 /* Domain */,
-				0337DEB42986C1F800C328D5 /* Presentation */,
+				0337DEB42986C1F800C328D5 /* UI */,
 				032FC183298DC51000AAD4F4 /* TransactionListFactory.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
 		};
-		0337DEB42986C1F800C328D5 /* Presentation */ = {
+		0337DEB42986C1F800C328D5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				0337DEB72986C58800C328D5 /* TransactionListViewModel.swift */,
@@ -254,7 +276,7 @@
 				0337DEB52986C22600C328D5 /* TransactionListView.swift */,
 				0337DEC62987108C00C328D5 /* TransactionListItemView.swift */,
 			);
-			path = Presentation;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		0337DEBB2986CCB700C328D5 /* CustomViews */ = {
@@ -263,6 +285,7 @@
 				0337DEBC2986D20200C328D5 /* CustomLoader.swift */,
 				0337DEC82987195000C328D5 /* AmountView.swift */,
 				0337DECA29871A5D00C328D5 /* TitleView.swift */,
+				0310994E2996639000DE02D4 /* NoConnectionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -279,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				0337DEC4298702D700C328D5 /* TransactionValue.swift */,
-				032FC1732989DD6900AAD4F4 /* Transaction.swift */,
 				032FC1752989DDE600AAD4F4 /* TransactionDetail.swift */,
 			);
 			path = Model;
@@ -473,6 +495,7 @@
 				031099442991394F00DE02D4 /* Reachability.swift in Sources */,
 				032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */,
 				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
+				0310994D29961D8900DE02D4 /* Theme.swift in Sources */,
 				03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */,
 				0337DEB62986C22600C328D5 /* TransactionListView.swift in Sources */,
 				03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */,
@@ -483,6 +506,7 @@
 				0337DEC12986D8CF00C328D5 /* TransactionListViewData.swift in Sources */,
 				0337DECB29871A5D00C328D5 /* TitleView.swift in Sources */,
 				032FC1632987485F00AAD4F4 /* Constants.swift in Sources */,
+				0310994F2996639000DE02D4 /* NoConnectionView.swift in Sources */,
 				032FC1762989DDE600AAD4F4 /* TransactionDetail.swift in Sources */,
 				032FC189298DD71B00AAD4F4 /* MockUrlProtocol.swift in Sources */,
 			);

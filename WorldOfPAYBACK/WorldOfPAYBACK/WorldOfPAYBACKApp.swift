@@ -13,7 +13,15 @@ struct WorldOfPAYBACKApp: App {
         WindowGroup {
             
             let vm = AppFactory().makeTransactionListFactory().makeViewModel()
-            TransactionListView(viewModel: vm)
+            NavigationView {
+                
+                TransactionListView(viewModel: vm)
+                    .navigationTitle(NSLocalizedString("Transactions", comment: "Transaction List title"))
+            }
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                Color("NavBarPrimary")
+            }
         }
     }
 }

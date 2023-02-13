@@ -8,13 +8,21 @@
 import Foundation
 import Network
 
-public struct TransactionListFactory {
+public final class TransactionListFactory {
     
     let networkService: NetworkService
+    var reachabilityService: ReachabilityService
+    
+    init(networkService: NetworkService, reachabilityService: ReachabilityService) {
+        
+        self.networkService = networkService
+        self.reachabilityService = reachabilityService
+    }
     
     func makeViewModel() -> some TransactionListViewModel {
         
-        TransactionListViewModelImpl(fetchUseCase: makeFetchUseCase())
+        TransactionListViewModelImpl(fetchUseCase: makeFetchUseCase(),
+                                     reachabilityService: self.reachabilityService)
     }
 }
 
@@ -27,14 +35,13 @@ private extension TransactionListFactory {
     }
     private func makeRepository() -> TransactionRepository {
         
-        TransactionRepositoryImpl(networkService: self.networkService,
-                                  reachability: ReachabilityServiceImpl())
+        TransactionRepositoryImpl(networkService: self.networkService)
     }
     private func makeMapper() -> TransactionListMapper {
         
         TransactionListMapperImpl(dateFormatter: DateFormatter())
     }
-    private func makeReachability() -> ReachabilityService {
+    private func makeReachability() -> some ReachabilityService {
         
         ReachabilityServiceImpl()
     }

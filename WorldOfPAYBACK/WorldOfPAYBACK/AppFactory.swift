@@ -11,6 +11,7 @@ public struct AppFactory {
     
     let networkService: NetworkService
     let jsonDecoder: JSONDecoder
+    let reachabilityService: ReachabilityService
     
     init() {
         
@@ -24,9 +25,11 @@ public struct AppFactory {
         
         networkService = NetworkSerivceImpl(session: URLSession(configuration: urlConfig),
                                             decoder: jsonDecoder)
+        reachabilityService = ReachabilityServiceImpl()
     }
     func makeTransactionListFactory() -> TransactionListFactory {
         
-        TransactionListFactory(networkService: networkService)
+        TransactionListFactory(networkService: networkService,
+                               reachabilityService: reachabilityService)
     }
 }

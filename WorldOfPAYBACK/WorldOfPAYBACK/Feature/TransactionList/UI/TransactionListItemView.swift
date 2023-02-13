@@ -29,7 +29,7 @@ struct TransactionListItemView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.black)
+        .background(Color("BackgroundSecondary"))
     }
 }
 

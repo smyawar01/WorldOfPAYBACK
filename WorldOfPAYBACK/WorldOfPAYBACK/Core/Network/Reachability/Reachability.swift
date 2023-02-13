@@ -7,7 +7,7 @@
 
 import Foundation
 import Network
-import SwiftUI
+import Combine
 
 public enum ReachabilityStatus {
     
@@ -16,19 +16,23 @@ public enum ReachabilityStatus {
 }
 public protocol ReachabilityService {
     
-    var reachabilityStatus: ReachabilityStatus { get }
+    // Define connectionStatus (wrapped value)
+        var connectionStatus: ReachabilityStatus { get }
+        
+        // Define connectionStatus publisher
+        var connectionStatusPublisher: Published<ReachabilityStatus>.Publisher { get }
 }
 
 public final class ReachabilityServiceImpl: ReachabilityService {
     
-    public var reachabilityStatus: ReachabilityStatus = .offline
-    
+    @Published public private(set) var connectionStatus: ReachabilityStatus = .online
+    public var connectionStatusPublisher: Published<ReachabilityStatus>.Publisher { $connectionStatus }
     private let monitor = NWPathMonitor()
     
     init() {
         
-        self.bind()
-        self.startMonitoring()
+        bind()
+        startMonitoring()
     }
     deinit {
         
@@ -46,7 +50,7 @@ private extension ReachabilityServiceImpl {
         
         self.monitor.pathUpdateHandler = { [weak self] path in
             
-            self?.reachabilityStatus = path.status == .satisfied ? .online : .offline
+            self?.connectionStatus =  path.status == .satisfied ? .online : .offline
         }
     }
     private func stopMonitoring() {

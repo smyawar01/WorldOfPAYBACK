@@ -22,8 +22,9 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
             
             if viewModel.viewState == .noInternet  {
                 
-                Text("No internet connection....")
+                NoConnectionView()
             }
+            Spacer()
             switch viewModel.viewState {
                 
             case .loading:
@@ -54,5 +55,6 @@ struct TransactionListView_Previews: PreviewProvider {
         
         let vm = AppFactory().makeTransactionListFactory().makeViewModel()
         TransactionListView(viewModel: vm)
+            .preferredColorScheme(.light)
     }
 }
