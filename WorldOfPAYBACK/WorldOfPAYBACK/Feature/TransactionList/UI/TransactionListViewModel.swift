@@ -16,7 +16,7 @@ protocol TransactionListViewModel: ObservableObject {
 
 public final class TransactionListViewModelImpl: TransactionListViewModel {
     
-    @Published var viewState: TransactionListViewState?
+    @Published var viewState: TransactionListViewState? = .noInternet
     private let fetchUseCase: FetchTransactionUseCase
     private let reachabilityService: ReachabilityService
     private var cancellables: Set<AnyCancellable> = []
@@ -69,9 +69,11 @@ extension TransactionListViewModelImpl {
     private func bind() {
         
         self.reachabilityService.connectionStatusPublisher.sink { status in
+            
             Task {
                 
-                await self.update(state: status == .offline ? .noInternet : .loaded([]) )
+                print("bind: \(status)")
+                await self.update(state: status == .offline ? .noInternet : .internet)
             }
         }
         .store(in: &cancellables)

@@ -50,6 +50,7 @@ private extension ReachabilityServiceImpl {
         
         self.monitor.pathUpdateHandler = { [weak self] path in
             
+            print("bind: \(path)")
             self?.connectionStatus =  path.status == .satisfied ? .online : .offline
         }
     }
