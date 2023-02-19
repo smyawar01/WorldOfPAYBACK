@@ -11,6 +11,7 @@ enum TransactionListViewState: Equatable {
     case loading
     case loaded([TransactionListViewData])
     case error(String)
+    case internet
     case noInternet
 }
 

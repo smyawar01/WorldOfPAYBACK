@@ -26,9 +26,7 @@ public struct FetchTransactionUseCaseImpl: FetchTransactionUseCase {
             
         } catch {
             
-            throw error is ConnectivityError ?
-            TransactionListError.deviceOffline :
-            TransactionListError.generic
+            throw TransactionListError.generic
         }
     }
 }
