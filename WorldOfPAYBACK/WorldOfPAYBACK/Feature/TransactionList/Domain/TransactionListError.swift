@@ -10,7 +10,6 @@ import Foundation
 enum TransactionListError: Error {
     
     case generic
-    case deviceOffline
 }
 
 extension TransactionListError {
@@ -21,8 +20,6 @@ extension TransactionListError {
             
         case .generic:
             return "Something went wrong. Please try again."
-        case .deviceOffline:
-            return "The device appears to be offline."
         }
     }
 }

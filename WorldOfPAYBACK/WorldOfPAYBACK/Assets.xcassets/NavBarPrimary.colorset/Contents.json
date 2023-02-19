@@ -2,25 +2,12 @@
   "colors" : [
     {
       "color" : {
-        "platform" : "ios",
-        "reference" : "systemBackgroundColor"
-      },
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "color" : {
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "30",
-          "green" : "26",
-          "red" : "22"
+          "blue" : "0.118",
+          "green" : "0.102",
+          "red" : "0.086"
         }
       },
       "idiom" : "universal"

@@ -11,7 +11,8 @@ import Combine
 protocol TransactionListViewModel: ObservableObject {
     
     var viewState: TransactionListViewState? { get set }
-    func transactions()
+    func loadTransactions()
+    func refresh()
 }
 
 public final class TransactionListViewModelImpl: TransactionListViewModel {
@@ -20,6 +21,7 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
     private let fetchUseCase: FetchTransactionUseCase
     private let reachabilityService: ReachabilityService
     private var cancellables: Set<AnyCancellable> = []
+    private var transactions: [TransactionListViewData] = []
     
     init(fetchUseCase: FetchTransactionUseCase, reachabilityService: ReachabilityService) {
         
@@ -27,21 +29,16 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
         self.reachabilityService = reachabilityService
         self.bind()
     }
-    public func transactions() {
+    public func loadTransactions() {
         
-        guard self.viewState != .noInternet else { return }
-        Task {
-            await update(state: .loading)
-            do {
-                
-                let transactions = try await fetchUseCase.execute()
-                await update(state: .loaded(transactions))
-                
-            } catch {
-                
-                await self.handleError(error: error)
-            }
+        if self.shouldLoadTransaction() {
+            
+            self.getTransactions()
         }
+    }
+    public func refresh() {
+        
+        self.loadTransactions()
     }
 }
 
@@ -52,31 +49,47 @@ extension TransactionListViewModelImpl {
         
         self.viewState = state
     }
+    private func getTransactions() {
+        Task {
+            await update(state: .loading)
+            do {
+                
+                self.transactions = try await fetchUseCase.execute()
+                await update(state: .loaded(self.transactions))
+                
+            } catch {
+                
+                await self.handleError(error: error)
+            }
+        }
+    }
     private func handleError(error: Error) async {
         
         guard let error = error as? TransactionListError else {
             
             return
         }
-        if case .deviceOffline = error {
-            
-            await update(state: .noInternet)
-        } else {
-            
-            await update(state: .error(error.localizedDescription))
-        }
+        await update(state: .error(error.localizedDescription))
     }
     private func bind() {
         
-        self.reachabilityService.connectionStatusPublisher.sink { status in
+        self.reachabilityService.connectionStatusPublisher.sink { [weak self] status in
             
+            guard let self = self else { return }
             Task {
                 
-                print("bind: \(status)")
                 await self.update(state: status == .offline ? .noInternet : .internet)
+                if status == .online && self.transactions.isEmpty {
+                    
+                    self.getTransactions()
+                }
             }
         }
         .store(in: &cancellables)
+    }
+    private func shouldLoadTransaction() -> Bool {
+        
+        return self.viewState == .internet || self.viewState != .loading
     }
 }
 

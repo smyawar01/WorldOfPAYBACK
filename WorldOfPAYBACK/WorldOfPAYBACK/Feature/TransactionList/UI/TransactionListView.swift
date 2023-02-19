@@ -14,7 +14,6 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
     init(viewModel: ViewModel) {
         
         self.viewModel = viewModel
-        viewModel.transactions()
     }
     var body: some View {
         
@@ -39,6 +38,10 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
                         TransactionListItemView(transaction: $0)
                             .listRowInsets(EdgeInsets())
                             .listRowSeparatorTint(.gray)
+                    }
+                    .refreshable {
+                        
+                        viewModel.refresh()
                     }
                 case .error(let message):
                     
