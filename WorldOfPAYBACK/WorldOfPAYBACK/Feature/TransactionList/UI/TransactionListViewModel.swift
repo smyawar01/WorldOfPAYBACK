@@ -11,6 +11,7 @@ import Combine
 protocol TransactionListViewModel: ObservableObject {
     
     var viewState: TransactionListViewState? { get set }
+    var transactions: [TransactionListViewData] { get }
     func loadTransactions()
     func refresh()
 }
@@ -18,10 +19,10 @@ protocol TransactionListViewModel: ObservableObject {
 public final class TransactionListViewModelImpl: TransactionListViewModel {
     
     @Published var viewState: TransactionListViewState? = .noInternet
+    var transactions: [TransactionListViewData] = []
     private let fetchUseCase: FetchTransactionUseCase
     private let reachabilityService: ReachabilityService
     private var cancellables: Set<AnyCancellable> = []
-    private var transactions: [TransactionListViewData] = []
     
     init(fetchUseCase: FetchTransactionUseCase, reachabilityService: ReachabilityService) {
         
@@ -55,7 +56,7 @@ extension TransactionListViewModelImpl {
             do {
                 
                 self.transactions = try await fetchUseCase.execute()
-                await update(state: .loaded(self.transactions))
+                await update(state: .loaded)
                 
             } catch {
                 
@@ -89,7 +90,7 @@ extension TransactionListViewModelImpl {
     }
     private func shouldLoadTransaction() -> Bool {
         
-        return self.viewState == .internet || self.viewState != .loading
+        return self.viewState == .internet && self.viewState != .loading
     }
 }
 

@@ -15,14 +15,14 @@ struct CustomLoader: View {
             VStack {
                 
                 ProgressView()
-                    .tint(Color.white)
+                    .tint(Color("ObjectPrimary"))
                     .padding()
-                Text("Loading...")
-                    .foregroundColor(Color.white)
+                Text(NSLocalizedString("Loading...", comment: "Loader text"))
+                    .foregroundColor(Color("TextPrimary"))
             }
         }
         .padding()
-        .background(Color.black.opacity(0.9))
+        .background(Color("ObjectSecondary"))
         .cornerRadius(5)
     }
 }

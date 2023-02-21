@@ -9,7 +9,7 @@ import Foundation
 
 enum TransactionListViewState: Equatable {
     case loading
-    case loaded([TransactionListViewData])
+    case loaded
     case error(String)
     case internet
     case noInternet
@@ -23,7 +23,7 @@ extension TransactionListViewState {
         
         case (.loading, .loading):
             return true
-        case (.loaded(_), .loaded(_)):
+        case (.loaded, .loaded):
             return true
         case (.error(_), .error(_)):
             return true

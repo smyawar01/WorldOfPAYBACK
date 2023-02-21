@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct WorldOfPAYBACKApp: App {
+    
     var body: some Scene {
         WindowGroup {
             
@@ -16,12 +17,9 @@ struct WorldOfPAYBACKApp: App {
             NavigationView {
                 
                 TransactionListView(viewModel: vm)
-                    .navigationTitle(NSLocalizedString("Transactions", comment: "Transaction List title"))
             }
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                Color("NavBarPrimary")
-            }
+            .ignoresSafeArea()
         }
     }
 }

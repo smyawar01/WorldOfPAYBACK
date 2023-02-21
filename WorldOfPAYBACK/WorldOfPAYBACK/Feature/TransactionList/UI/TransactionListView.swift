@@ -18,44 +18,35 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
     var body: some View {
         
         ZStack {
+            Color("BackgroundPrimary").ignoresSafeArea()
             VStack {
-                
+
                 if viewModel.viewState == .noInternet {
-                    
+
                     NoConnectionView()
                     .frame(height: 60)
                     Spacer()
                 }
-            }
-            VStack {
-                
-                switch viewModel.viewState {
-                    
-                case .loaded(let transactions):
-                    
-                    List(transactions, id: \.id) {
-                        
-                        TransactionListItemView(transaction: $0)
-                            .listRowInsets(EdgeInsets())
-                            .listRowSeparatorTint(.gray)
-                    }
-                    .refreshable {
-                        
-                        viewModel.refresh()
-                    }
-                case .error(let message):
-                    
-                    Text(message)
-                default:
-                    Text("No data available.....")
+                List(viewModel.transactions, id: \.id) {
+                    TransactionListItemView(transaction: $0)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparatorTint(.gray)
+                }
+                .listStyle(.plain)
+                .refreshable {
+
+                    viewModel.refresh()
                 }
             }
+        }
+        .overlay(content: {
+
             if viewModel.viewState == .loading {
-                
+
                 CustomLoader()
             }
-        }
-        .navigationTitle("Transactions")
+        })
+        .navigationTitle(NSLocalizedString("Transactions", comment: "Navigation Title"))
     }
 }
 
@@ -64,6 +55,5 @@ struct TransactionListView_Previews: PreviewProvider {
         
         let vm = AppFactory().makeTransactionListFactory().makeViewModel()
         TransactionListView(viewModel: vm)
-            .preferredColorScheme(.light)
     }
 }
