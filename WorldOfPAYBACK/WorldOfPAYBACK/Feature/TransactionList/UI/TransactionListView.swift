@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionListView<ViewModel: TransactionListViewModel>: View {
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
         
@@ -20,12 +20,15 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
         ZStack {
             Color("BackgroundPrimary").ignoresSafeArea()
             VStack {
-
                 if viewModel.viewState == .noInternet {
 
                     NoConnectionView()
                     .frame(height: 60)
                     Spacer()
+                }
+                TransactionListHeader(amount: "0.0") {
+                    
+                    self.viewModel.showCategories()
                 }
                 List(viewModel.transactions, id: \.id) {
                     TransactionListItemView(transaction: $0)
@@ -37,13 +40,23 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
 
                     viewModel.refresh()
                 }
+                .onAppear {
+                    
+                    UIRefreshControl.appearance().tintColor = UIColor(named: "ObjectSecondary")
+                }
             }
         }
         .overlay(content: {
 
-            if viewModel.viewState == .loading {
+            if self.viewModel.viewState == .loading {
 
                 CustomLoader()
+            } else if case let .categories(categories) = self.viewModel.viewState {
+                
+                List(categories, id: \.self) { category in
+                    
+                    Text("\(category)")
+                }
             }
         })
         .navigationTitle(NSLocalizedString("Transactions", comment: "Navigation Title"))

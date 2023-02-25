@@ -10,6 +10,11 @@ import SwiftUI
 @main
 struct WorldOfPAYBACKApp: App {
     
+    init() {
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
+    }
     var body: some Scene {
         WindowGroup {
             
@@ -19,7 +24,6 @@ struct WorldOfPAYBACKApp: App {
                 TransactionListView(viewModel: vm)
             }
             .navigationBarTitleDisplayMode(.large)
-            .ignoresSafeArea()
         }
     }
 }

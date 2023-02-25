@@ -30,7 +30,8 @@ public struct TransactionListMapperImpl: TransactionListMapper {
                                            bookingDate: self.dateFormatter.string(from: transaction.transactionDetail.bookingDate),
                                            partnerDisplayName: transaction.partnerDisplayName,
                                            description: transaction.transactionDetail.description ?? "N/A",
-                                           value: transaction.transactionDetail.value)
+                                           value: transaction.transactionDetail.value,
+                                           category: transaction.category)
         }
     }
 }
