@@ -14,6 +14,7 @@ protocol TransactionListViewModel: ObservableObject {
     var transactions: [TransactionListViewData] { get }
     func loadTransactions()
     func refresh()
+    func showCategories()
 }
 
 public final class TransactionListViewModelImpl: TransactionListViewModel {
@@ -21,12 +22,16 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
     @Published var viewState: TransactionListViewState? = .noInternet
     var transactions: [TransactionListViewData] = []
     private let fetchUseCase: FetchTransactionUseCase
+    private let filterUseCase: FilterTransactionUseCase
     private let reachabilityService: ReachabilityService
     private var cancellables: Set<AnyCancellable> = []
     
-    init(fetchUseCase: FetchTransactionUseCase, reachabilityService: ReachabilityService) {
+    init(fetchUseCase: FetchTransactionUseCase,
+         filterUseCase: FilterTransactionUseCase,
+         reachabilityService: ReachabilityService) {
         
         self.fetchUseCase = fetchUseCase
+        self.filterUseCase = filterUseCase
         self.reachabilityService = reachabilityService
         self.bind()
     }
@@ -40,6 +45,13 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
     public func refresh() {
         
         self.loadTransactions()
+    }
+    public func showCategories() {
+        
+        Task {
+            
+            await self.update(state: .categories(self.filterCategories()))
+        }
     }
 }
 
@@ -79,6 +91,7 @@ extension TransactionListViewModelImpl {
             guard let self = self else { return }
             Task {
                 
+                print(status)
                 await self.update(state: status == .offline ? .noInternet : .internet)
                 if status == .online && self.transactions.isEmpty {
                     
@@ -91,6 +104,13 @@ extension TransactionListViewModelImpl {
     private func shouldLoadTransaction() -> Bool {
         
         return self.viewState == .internet && self.viewState != .loading
+    }
+    private func filterCategories() -> [Int] {
+        
+        return self.transactions
+            .compactMap { $0.category }
+            .distinct()
+            .sorted()
     }
 }
 

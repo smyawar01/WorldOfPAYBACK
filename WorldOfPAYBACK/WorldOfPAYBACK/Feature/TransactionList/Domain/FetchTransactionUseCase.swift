@@ -30,3 +30,20 @@ public struct FetchTransactionUseCaseImpl: FetchTransactionUseCase {
         }
     }
 }
+
+public protocol FilterTransactionUseCase {
+    
+    func execute() -> [TransactionListViewData]
+}
+
+public struct FilterTransactionUseCaseImpl: FilterTransactionUseCase {
+    
+    
+    let transactions: [TransactionListViewData]
+    let categoryId: Int
+    
+    public func execute() -> [TransactionListViewData] {
+        
+        return transactions.filter { $0.category == categoryId  }
+    }
+}

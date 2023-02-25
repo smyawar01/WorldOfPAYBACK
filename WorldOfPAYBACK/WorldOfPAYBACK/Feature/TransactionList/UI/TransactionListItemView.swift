@@ -23,7 +23,7 @@ struct TransactionListItemView: View {
             VStack(alignment: .trailing, spacing: 10) {
 
                 Text(transaction.bookingDate)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("TextSecondary"))
                 AmountView(amount: "\(transaction.value.amount) \(transaction.value.currency)")
             }
         }
@@ -37,13 +37,14 @@ struct TransactionListItemView_Previews: PreviewProvider {
     static var previews: some View {
         
         let transaction = TransactionListViewData(id: UUID(),
-                                bookingDate: "2022-07-24T10:59:05",
-                                partnerDisplayName: "REWE Group",
-                                description: "Punkte sammeln",
-                                value:
-                                    TransactionValue(
-                                        amount: 124,
-                                        currency: "GBP"))
+                                                  bookingDate: "2022-07-24T10:59:05",
+                                                  partnerDisplayName: "REWE Group",
+                                                  description: "Punkte sammeln",
+                                                  value:
+                                                    TransactionValue(
+                                                        amount: 124,
+                                                        currency: "GBP"),
+                                                  category: 1)
         TransactionListItemView(transaction: transaction)
     }
 }

@@ -22,6 +22,7 @@ public final class TransactionListFactory {
     func makeViewModel() -> some TransactionListViewModel {
         
         TransactionListViewModelImpl(fetchUseCase: makeFetchUseCase(),
+                                     filterUseCase: makeFilterUseCase(),
                                      reachabilityService: self.reachabilityService)
     }
 }
@@ -32,6 +33,11 @@ private extension TransactionListFactory {
         
         FetchTransactionUseCaseImpl(repository: makeRepository(),
                                     mapper: makeMapper())
+    }
+    private func makeFilterUseCase() -> FilterTransactionUseCase {
+        
+        FilterTransactionUseCaseImpl(transactions: [],
+                                     categoryId: 1)
     }
     private func makeRepository() -> TransactionRepository {
         

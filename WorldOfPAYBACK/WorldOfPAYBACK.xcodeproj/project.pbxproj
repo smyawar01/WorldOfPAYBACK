@@ -40,6 +40,8 @@
 		0337DED729873BD500C328D5 /* TransactionListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DED629873BD400C328D5 /* TransactionListViewTests.swift */; };
 		0337DEE029873E9100C328D5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0337DEDF29873E9100C328D5 /* SnapshotTesting */; };
 		0337DEE22987433100C328D5 /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */; };
+		036740B129A99CCA0080F742 /* TransactionListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036740B029A99CCA0080F742 /* TransactionListHeader.swift */; };
+		036740B429AA10390080F742 /* Array+UniqueElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036740B329AA10380080F742 /* Array+UniqueElement.swift */; };
 		03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */; };
 		03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C98AF02990558F00E4E244 /* TransactionListError.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		0337DECA29871A5D00C328D5 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0337DED629873BD400C328D5 /* TransactionListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewTests.swift; sourceTree = "<group>"; };
 		0337DEE12987433100C328D5 /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
+		036740B029A99CCA0080F742 /* TransactionListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListHeader.swift; sourceTree = "<group>"; };
+		036740B329AA10380080F742 /* Array+UniqueElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+UniqueElement.swift"; sourceTree = "<group>"; };
 		03C98AEE298FEE8600E4E244 /* TransactionListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListResponse.swift; sourceTree = "<group>"; };
 		03C98AF02990558F00E4E244 /* TransactionListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +204,7 @@
 		0337DE84298696B100C328D5 /* WorldOfPAYBACK */ = {
 			isa = PBXGroup;
 			children = (
+				036740B229AA10080080F742 /* Extensions */,
 				0310994B29961D7500DE02D4 /* Theme */,
 				032FC1642987486500AAD4F4 /* Constants */,
 				0337DEBB2986CCB700C328D5 /* CustomViews */,
@@ -275,6 +280,7 @@
 				0337DEC02986D8CF00C328D5 /* TransactionListViewData.swift */,
 				0337DEB52986C22600C328D5 /* TransactionListView.swift */,
 				0337DEC62987108C00C328D5 /* TransactionListItemView.swift */,
+				036740B029A99CCA0080F742 /* TransactionListHeader.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -321,6 +327,14 @@
 				0337DED629873BD400C328D5 /* TransactionListViewTests.swift */,
 			);
 			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		036740B229AA10080080F742 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				036740B329AA10380080F742 /* Array+UniqueElement.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		03C98AEB298FEDE000E4E244 /* Response */ = {
@@ -496,7 +510,9 @@
 				032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */,
 				032FC184298DC51000AAD4F4 /* TransactionListFactory.swift in Sources */,
 				0310994D29961D8900DE02D4 /* Theme.swift in Sources */,
+				036740B129A99CCA0080F742 /* TransactionListHeader.swift in Sources */,
 				03C98AEF298FEE8600E4E244 /* TransactionListResponse.swift in Sources */,
+				036740B429AA10390080F742 /* Array+UniqueElement.swift in Sources */,
 				0337DEB62986C22600C328D5 /* TransactionListView.swift in Sources */,
 				03C98AF12990558F00E4E244 /* TransactionListError.swift in Sources */,
 				032FC1792989DF7F00AAD4F4 /* NetworkService.swift in Sources */,
