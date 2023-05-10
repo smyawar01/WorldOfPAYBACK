@@ -30,6 +30,8 @@ struct TransactionListItemView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color("BackgroundSecondary"))
+        .listRowInsets(EdgeInsets())
+        .listRowSeparatorTint(.gray)
     }
 }
 
