@@ -12,8 +12,7 @@ struct WorldOfPAYBACKApp: App {
     
     init() {
         
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
+        setupAppearanceConfig()
     }
     var body: some Scene {
         WindowGroup {
@@ -23,7 +22,16 @@ struct WorldOfPAYBACKApp: App {
                 
                 TransactionListView(viewModel: vm)
             }
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+extension WorldOfPAYBACKApp {
+    
+    private func setupAppearanceConfig() {
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "TextSecondary")!]
+        UIRefreshControl.appearance().tintColor = UIColor(named: "ObjectSecondary")
     }
 }

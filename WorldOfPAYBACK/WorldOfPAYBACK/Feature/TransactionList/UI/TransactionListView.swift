@@ -30,19 +30,12 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
                     
                     self.viewModel.showCategories()
                 }
-                List(viewModel.transactions, id: \.id) {
-                    TransactionListItemView(transaction: $0)
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparatorTint(.gray)
-                }
-                .listStyle(.plain)
-                .refreshable {
-
-                    viewModel.refresh()
-                }
-                .onAppear {
+                ListView(items: self.viewModel.transactions) {
                     
-                    UIRefreshControl.appearance().tintColor = UIColor(named: "ObjectSecondary")
+                    TransactionListItemView(transaction: $0)
+                } onRefresh: {
+                    
+                    self.viewModel.refresh()
                 }
             }
         }
@@ -53,13 +46,11 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
                 CustomLoader()
             } else if case let .categories(categories) = self.viewModel.viewState {
                 
-                List(categories, id: \.self) { category in
-                    
-                    Text("\(category)")
-                }
+                
             }
         })
-        .navigationTitle(NSLocalizedString("Transactions", comment: "Navigation Title"))
+        .navigationTitle(NSLocalizedString("Transactions",
+                                           comment: "Navigation Title"))
     }
 }
 
