@@ -43,7 +43,7 @@ private extension ReachabilityServiceImpl {
     
     private func startMonitoring() {
         
-        let queue = DispatchQueue(label: "Monitor")
+        let queue = DispatchQueue(label: "NWPathMonitorQueue")
         self.monitor.start(queue: queue)
     }
     private func bind() {
@@ -51,7 +51,8 @@ private extension ReachabilityServiceImpl {
         self.monitor.pathUpdateHandler = { [weak self] path in
             
             print("bind: \(path)")
-            self?.connectionStatus =  path.status == .satisfied ? .online : .offline
+            guard let self else { return }
+            self.connectionStatus =  path.status == .satisfied ? .online : .offline
         }
     }
     private func stopMonitoring() {
