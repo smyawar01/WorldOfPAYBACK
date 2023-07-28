@@ -16,17 +16,12 @@ public enum ReachabilityStatus {
 }
 public protocol ReachabilityService {
     
-    // Define connectionStatus (wrapped value)
-        var connectionStatus: ReachabilityStatus { get }
-        
-        // Define connectionStatus publisher
-        var connectionStatusPublisher: Published<ReachabilityStatus>.Publisher { get }
+    var connectionStatus: CurrentValueSubject<ReachabilityStatus, Never> { get }
 }
 
 public final class ReachabilityServiceImpl: ReachabilityService {
     
-    @Published public private(set) var connectionStatus: ReachabilityStatus = .online
-    public var connectionStatusPublisher: Published<ReachabilityStatus>.Publisher { $connectionStatus }
+    private(set) public var connectionStatus = CurrentValueSubject<ReachabilityStatus, Never>(.online)
     private let monitor = NWPathMonitor()
     
     init() {
@@ -52,7 +47,7 @@ private extension ReachabilityServiceImpl {
             
             print("bind: \(path)")
             guard let self else { return }
-            self.connectionStatus =  path.status == .satisfied ? .online : .offline
+            self.connectionStatus.send(path.status == .satisfied ? .online : .offline)
         }
     }
     private func stopMonitoring() {
