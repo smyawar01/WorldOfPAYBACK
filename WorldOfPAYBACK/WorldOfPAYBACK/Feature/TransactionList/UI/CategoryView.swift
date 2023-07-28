@@ -9,15 +9,20 @@ import SwiftUI
 
 struct CategoryView: View {
     
-    private let categories: [any Identifiable]
+    private let categories: [Category]
+    init(categories: [Category]) {
+        self.categories = categories
+    }
     var body: some View {
         
-        ListView(items: categories) { Text("\($0)") }
+        ListView(items: categories) { Text($0.name) }
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        
+        let categories: [Category] = [Category(name: "1", id: UUID())]
+        CategoryView(categories: categories)
     }
 }

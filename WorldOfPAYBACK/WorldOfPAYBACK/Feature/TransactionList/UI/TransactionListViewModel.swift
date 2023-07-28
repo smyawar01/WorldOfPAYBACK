@@ -78,17 +78,14 @@ extension TransactionListViewModelImpl {
     }
     private func handleError(error: Error) async {
         
-        guard let error = error as? TransactionListError else {
-            
-            return
-        }
+        guard let error = error as? TransactionListError else { return }
         await update(state: .error(error.localizedDescription))
     }
     private func bind() {
         
-        self.reachabilityService.connectionStatusPublisher.sink { [weak self] status in
+        self.reachabilityService.connectionStatus.sink { [weak self] status in
             
-            guard let self = self else { return }
+            guard let self else { return }
             Task {
                 
                 print(status)
