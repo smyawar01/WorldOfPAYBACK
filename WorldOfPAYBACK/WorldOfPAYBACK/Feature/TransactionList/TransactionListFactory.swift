@@ -31,24 +31,13 @@ private extension TransactionListFactory {
     
     private func makeFetchUseCase() -> FetchTransactionUseCase {
         
-        FetchTransactionUseCaseImpl(repository: makeRepository(),
-                                    mapper: makeMapper())
+        FetchTransactionUseCaseImpl(repository: makeRepository(), mapper: makeMapper())
     }
     private func makeFilterUseCase() -> FilterTransactionUseCase {
         
-        FilterTransactionUseCaseImpl(transactions: [],
-                                     categoryId: 1)
+        FilterTransactionUseCaseImpl(transactions: [], categoryId: 1)
     }
-    private func makeRepository() -> TransactionRepository {
-        
-        TransactionRepositoryImpl(networkService: self.networkService)
-    }
-    private func makeMapper() -> TransactionListMapper {
-        
-        TransactionListMapperImpl(dateFormatter: DateFormatter())
-    }
-    private func makeReachability() -> some ReachabilityService {
-        
-        ReachabilityServiceImpl()
-    }
+    private func makeRepository() -> TransactionRepository { TransactionRepositoryImpl(networkService: self.networkService) }
+    private func makeMapper() -> TransactionListMapper { TransactionListMapperImpl(dateFormatter: DateFormatter()) }
+    private func makeReachability() -> some ReachabilityService { ReachabilityServiceImpl() }
 }

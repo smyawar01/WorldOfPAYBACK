@@ -23,7 +23,7 @@ class TransactionListViewTests: XCTestCase {
     func test_listView_listLoaded() throws {
         
         let vm = TransactionListViewModelStub()
-        vm.viewState = .loaded(makeTransactionListViewData())
+        vm.viewState = .loaded
         let view = TransactionListView(viewModel: vm)
         let vc = UIHostingController(rootView: view)
         vc.view.frame = UIScreen.main.bounds
@@ -67,10 +67,14 @@ class TransactionListViewTests: XCTestCase {
     }
 }
 class TransactionListViewModelStub: TransactionListViewModel {
+    var transactions: [WorldOfPAYBACK.TransactionListViewData] = []
     
+    func loadTransactions() { }
+    
+    func refresh() { }
+    
+    func showCategories() { }
+
     var viewState: TransactionListViewState?
-    
-    func transactions() {
-    }
 }
 
