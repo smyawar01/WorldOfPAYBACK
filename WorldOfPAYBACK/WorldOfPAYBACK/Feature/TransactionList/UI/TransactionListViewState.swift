@@ -13,7 +13,7 @@ enum TransactionListViewState: Equatable {
     case error(String)
     case internet
     case noInternet
-    case categories([Int])
+    case showCategories([Category])
 }
 
 extension TransactionListViewState {

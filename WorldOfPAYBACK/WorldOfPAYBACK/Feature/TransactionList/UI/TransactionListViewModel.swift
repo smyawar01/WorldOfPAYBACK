@@ -48,10 +48,7 @@ public final class TransactionListViewModelImpl: TransactionListViewModel {
     }
     public func showCategories() {
         
-        Task {
-            
-            await self.update(state: .categories(self.filterCategories()))
-        }
+        Task { await self.update(state: .showCategories(self.filterCategories())) }
     }
 }
 
@@ -102,10 +99,10 @@ extension TransactionListViewModelImpl {
         
         return self.viewState == .internet && self.viewState != .loading
     }
-    private func filterCategories() -> [Int] {
+    private func filterCategories() -> [Category] {
         
         return self.transactions
-            .compactMap { $0.category }
+            .compactMap { Category(type: $0.category, id: UUID()) }
             .distinct()
             .sorted()
     }

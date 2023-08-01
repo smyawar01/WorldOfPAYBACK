@@ -20,7 +20,7 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
         ZStack {
             Color("BackgroundPrimary").ignoresSafeArea()
             VStack {
-                if viewModel.viewState == .noInternet {
+                if case .noInternet = viewModel.viewState {
 
                     NoConnectionView()
                     .frame(height: 60)
@@ -41,12 +41,12 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
         }
         .overlay(content: {
 
-            if self.viewModel.viewState == .loading {
-
-                CustomLoader()
-            } else if case let .categories(categories) = self.viewModel.viewState {
+            if case .loading = self.viewModel.viewState { CustomLoader() }
+            else if case let .showCategories(categories) = self.viewModel.viewState {
                 
-                
+                CategoryView(categories: categories) {
+                    
+                }
             }
         })
         .navigationTitle(NSLocalizedString("Transactions",

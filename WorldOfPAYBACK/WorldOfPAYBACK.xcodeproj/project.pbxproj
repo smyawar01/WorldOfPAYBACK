@@ -13,7 +13,7 @@
 		0310994D29961D8900DE02D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310994C29961D8900DE02D4 /* Theme.swift */; };
 		0310994F2996639000DE02D4 /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310994E2996639000DE02D4 /* NoConnectionView.swift */; };
 		032FC1632987485F00AAD4F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1622987485F00AAD4F4 /* Constants.swift */; };
-		032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */; };
+		032FC16E2989DAB500AAD4F4 /* TransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC16D2989DAB500AAD4F4 /* TransactionUseCase.swift */; };
 		032FC1722989DCCD00AAD4F4 /* TransactionRepositroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */; };
 		032FC1742989DD6A00AAD4F4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1732989DD6900AAD4F4 /* Transaction.swift */; };
 		032FC1762989DDE600AAD4F4 /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FC1752989DDE600AAD4F4 /* TransactionDetail.swift */; };
@@ -73,7 +73,7 @@
 		0310994C29961D8900DE02D4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0310994E2996639000DE02D4 /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
 		032FC1622987485F00AAD4F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionUseCase.swift; sourceTree = "<group>"; };
+		032FC16D2989DAB500AAD4F4 /* TransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUseCase.swift; sourceTree = "<group>"; };
 		032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositroy.swift; sourceTree = "<group>"; };
 		032FC1732989DD6900AAD4F4 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		032FC1752989DDE600AAD4F4 /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
@@ -367,7 +367,7 @@
 			children = (
 				032FC17F298DB1D700AAD4F4 /* TransactionListMapper.swift */,
 				032FC1712989DCCD00AAD4F4 /* TransactionRepositroy.swift */,
-				032FC16D2989DAB500AAD4F4 /* FetchTransactionUseCase.swift */,
+				032FC16D2989DAB500AAD4F4 /* TransactionUseCase.swift */,
 				03C98AF02990558F00E4E244 /* TransactionListError.swift */,
 			);
 			path = Domain;
@@ -516,7 +516,7 @@
 			files = (
 				032FC1742989DD6A00AAD4F4 /* Transaction.swift in Sources */,
 				0337DE86298696B100C328D5 /* WorldOfPAYBACKApp.swift in Sources */,
-				032FC16E2989DAB500AAD4F4 /* FetchTransactionUseCase.swift in Sources */,
+				032FC16E2989DAB500AAD4F4 /* TransactionUseCase.swift in Sources */,
 				03C1F7222A1272E100ADE10A /* Category.swift in Sources */,
 				0337DEBD2986D20200C328D5 /* CustomLoader.swift in Sources */,
 				0337DEC92987195000C328D5 /* AmountView.swift in Sources */,

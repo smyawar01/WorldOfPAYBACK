@@ -8,7 +8,11 @@
 import Foundation
 
 struct Category: Identifiable {
-    
-    let name: String
+    let type: Int
     let id: UUID
+}
+
+extension Category: Comparable, Hashable {
+    
+    static func < (lhs: Category, rhs: Category) -> Bool { lhs.type < rhs.type }
 }

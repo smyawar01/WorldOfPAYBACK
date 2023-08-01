@@ -46,7 +46,7 @@ class TransactionListViewTests: XCTestCase {
                   partnerDisplayName: "REWE Group",
                   description: "Punkte sammeln",
                   value: TransactionValue(amount: 124,
-                                          currency: "GBP")),
+                                          currency: "GBP"), category: 1),
             .init(id: UUID(),
                 bookingDate: "2022-07-24T10:59:05",
                 partnerDisplayName: "REWE Group",
@@ -54,7 +54,7 @@ class TransactionListViewTests: XCTestCase {
                 value:
                     TransactionValue(
                         amount: 124,
-                        currency: "GBP")),
+                        currency: "GBP"), category: 1),
             .init(id: UUID(),
                 bookingDate: "2022-07-24T10:59:05",
                 partnerDisplayName: "REWE Group",
@@ -62,7 +62,7 @@ class TransactionListViewTests: XCTestCase {
                 value:
                     TransactionValue(
                         amount: 124,
-                        currency: "GBP"))
+                        currency: "GBP"), category: 1)
             ]
     }
 }
