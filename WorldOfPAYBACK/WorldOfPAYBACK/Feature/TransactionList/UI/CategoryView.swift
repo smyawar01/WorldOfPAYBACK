@@ -17,10 +17,13 @@ struct CategoryView: View {
     }
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading, spacing: Theme.Spacing.expanded) {
             
-            Image(systemName: "xmark")
-            Spacer(minLength: Theme.Spacing.standard)
+            Button {
+                onClose()
+            } label: {
+                Image(systemName: "xmark")
+            }
             ListView(items: categories) { Text("\($0.type)") }
         }
     }
