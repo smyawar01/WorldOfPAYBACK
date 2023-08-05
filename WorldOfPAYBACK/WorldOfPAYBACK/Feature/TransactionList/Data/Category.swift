@@ -12,7 +12,12 @@ struct Category: Identifiable {
     let id: UUID
 }
 
-extension Category: Comparable, Hashable {
+extension Category: Hashable {
     
+    func hash(into hasher: inout Hasher) { hasher.combine(type) }
+    static func ==(lhs: Category, rhs: Category) -> Bool { lhs.type == rhs.type }
+}
+
+extension Category: Comparable {
     static func < (lhs: Category, rhs: Category) -> Bool { lhs.type < rhs.type }
 }

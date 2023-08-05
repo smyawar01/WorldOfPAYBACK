@@ -10,30 +10,36 @@ import SwiftUI
 struct CategoryView: View {
     
     private let categories: [Category]
-    private let onClose: (() -> Void)
-    init(categories: [Category], onClose: @escaping () -> Void) {
+    private let onSelection: (() -> Void)
+    init(categories: [Category], onSelection: @escaping () -> Void) {
         self.categories = categories
-        self.onClose = onClose
+        self.onSelection = onSelection
     }
     var body: some View {
         
         VStack(alignment: .leading, spacing: Theme.Spacing.expanded) {
             
             Button {
-                onClose()
+                
             } label: {
                 Image(systemName: "xmark")
             }
+            .padding(Theme.Spacing.expanded)
             ListView(items: categories) { Text("\($0.type)") }
         }
+        .background(content: {
+            Color(uiColor: .lightGray)
+        })
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let categories: [Category] = [Category(type: 1, id: UUID())]
-        CategoryView(categories: categories) {
+        let categories: [Category] = [Category(type: 1, id: UUID()),
+                                      Category(type: 1, id: UUID()),
+                                      Category(type: 2, id: UUID())]
+        CategoryView(categories: categories.distinct()) {
             
             print("on close clicked...")
         }
