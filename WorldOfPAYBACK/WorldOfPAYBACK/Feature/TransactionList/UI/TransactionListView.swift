@@ -33,10 +33,8 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
                 ListView(items: self.viewModel.transactions) {
                     
                     TransactionListItemView(transaction: $0)
-                } onRefresh: {
-                    
-                    self.viewModel.refresh()
                 }
+                .refreshable { self.viewModel.refresh() }
             }
         }
         .overlay(content: {

@@ -11,23 +11,17 @@ struct ListView<Element: Identifiable, RowContent: View>: View {
     
     private let items: [Element]
     private let rowContent: ((Element) -> RowContent)
-    private let onRefresh: (() -> ())?
     
     init(items: [Element],
-         @ViewBuilder rowContent: @escaping (Element) -> RowContent,
-         onRefresh: @escaping () -> Void = {}) {
+         @ViewBuilder rowContent: @escaping (Element) -> RowContent) {
         self.items = items
         self.rowContent = rowContent
-        self.onRefresh = onRefresh
     }
     
     var body: some View {
         
         List(items, id: \.id, rowContent: rowContent)
         .listStyle(.plain)
-        .refreshable {
-            onRefresh?()
-        }
     }
 }
 

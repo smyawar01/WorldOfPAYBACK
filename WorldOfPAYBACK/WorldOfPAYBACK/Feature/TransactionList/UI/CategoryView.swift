@@ -10,8 +10,8 @@ import SwiftUI
 struct CategoryView: View {
     
     private let categories: [Category]
-    private let onSelection: (() -> Void)
-    init(categories: [Category], onSelection: @escaping () -> Void) {
+    private let onSelection: ((Category) -> Void)
+    init(categories: [Category], onSelection: @escaping (Category) -> Void) {
         self.categories = categories
         self.onSelection = onSelection
     }
