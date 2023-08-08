@@ -39,7 +39,7 @@ struct CategoryView_Previews: PreviewProvider {
         let categories: [Category] = [Category(type: 1, id: UUID()),
                                       Category(type: 1, id: UUID()),
                                       Category(type: 2, id: UUID())]
-        CategoryView(categories: categories.distinct()) {
+        CategoryView(categories: categories.distinct()) { _ in
             
             print("on close clicked...")
         }

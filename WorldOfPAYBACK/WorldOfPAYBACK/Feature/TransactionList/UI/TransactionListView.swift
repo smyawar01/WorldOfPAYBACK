@@ -42,9 +42,7 @@ struct TransactionListView<ViewModel: TransactionListViewModel>: View {
             if case .loading = self.viewModel.viewState { CustomLoader() }
             else if case let .showCategories(categories) = self.viewModel.viewState {
                 
-                CategoryView(categories: categories) {
-                    
-                }
+                CategoryView(categories: categories) { _ in }
             }
         })
         .navigationTitle(NSLocalizedString("Transactions",
